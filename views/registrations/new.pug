@@ -1,0 +1,9 @@
+doctype html 
+html 
+  head 
+    title Register
+  body 
+    form(action = '/users' method="POST")
+      input(type='email'  placeholder="Ingresa tu correo" name='email') 
+      input(type='password'  placeholder="Ingresa tu contraseña" name='password')
+      input(type="submit" value='Enviar')

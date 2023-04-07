@@ -1,0 +1,8 @@
+doctype html 
+html 
+  head 
+    title Register  
+  body 
+    form(action = `/actions/${actions.id}?_method=PUT` method="POST")
+      textarea(name="nombre", placeholder='Escribe un mensaje aqui')= actions.nombre
+      input(type='submit' value='Enviar') 
