@@ -11,6 +11,9 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      actions.belongsTo(models.User, {
+        as: 'user'
+      });
     }
   }
   actions.init({

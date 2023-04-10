@@ -34,7 +34,8 @@ module.exports = {
     },
     create: function(req, res) {
         actions.create({
-            nombre: req.body.nombre
+            nombre: req.body.nombre,
+            userId: req.user.id
         }).then(result => {
             res.json(result);
         }).catch(err => {
