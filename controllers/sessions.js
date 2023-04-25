@@ -1,26 +1,26 @@
 const User = require('../models').User;
 
-
 module.exports = {
-    new: function(req, res) {
+    new: function(req, res){
         res.render('sessions/new');
     },
-    create: function(req, res) {
+    create: function(req, res){
         User.login(req.body.email, req.body.password)
         .then(user => {
-            if(user) {
+            if(user){
                 req.session.userID = user.id;
+                res.redirect('/actions');
+
             }
-            res.json(user);
         })
         .catch(err => {
             console.log(err);
             res.json(err);
         })
     },
-    destroy: function(req, res) {
+    destroy: function(req, res){
         req.session.destroy(function(){
             res.redirect('/sessions');
         })
     }
-};
+}
